@@ -29,14 +29,9 @@ namespace SwaggerApplication
 
             services.AddApiVersioning(options =>
             {
-                options.UseApiBehavior = false;
                 options.DefaultApiVersion = new ApiVersion(1, 0);
                 options.ReportApiVersions = true;
                 options.AssumeDefaultVersionWhenUnspecified = true;
-                options.ApiVersionReader = ApiVersionReader.Combine(
-                        new HeaderApiVersionReader("x-api-version"),
-                        new QueryStringApiVersionReader(),
-                        new UrlSegmentApiVersionReader());
             });
 
             services.AddVersionedApiExplorer(p =>
@@ -44,14 +39,6 @@ namespace SwaggerApplication
                    p.GroupNameFormat = "'v'V";
                    p.SubstituteApiVersionInUrl = true;
                });
-
-            services.AddApiVersioning(o =>
-            {
-                o.ReportApiVersions = true;
-                o.AssumeDefaultVersionWhenUnspecified = true;
-                o.DefaultApiVersion = new ApiVersion(1, 0);
-            });
-
 
             services.AddSwaggerGen(c =>
             {
@@ -62,7 +49,7 @@ namespace SwaggerApplication
                 {
                     c.SwaggerDoc(description.GroupName, new OpenApiInfo
                     {
-                        Title = "TESTE e o titulo do Swagger",
+                        Title = "Titulo do Swagger",
                         Version = description.ApiVersion.ToString(),
                         Contact = new OpenApiContact
                         {

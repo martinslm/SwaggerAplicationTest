@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace SwaggerApplication.Controllers
 {
-    [ApiVersion("1.0")]
+    [ApiVersion("1.0", Deprecated = true)]
     [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
@@ -61,6 +61,7 @@ namespace SwaggerApplication.Controllers
             return Ok(carro);
         }
 
+        [MapToApiVersion("1.0")]
         [HttpPost]
         public IActionResult Post(Carro carro)
         {
@@ -83,6 +84,7 @@ namespace SwaggerApplication.Controllers
             return NoContent();
         }
 
+        [MapToApiVersion("2.0")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
