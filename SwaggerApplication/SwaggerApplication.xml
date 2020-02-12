@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwaggerApplication</name>
+    </assembly>
+    <members>
+        <member name="M:SwaggerApplication.Controllers.CarroController.Get">
+            <summary>
+            Este método serve para obter a listagem de todos os carros cadastrados.
+            </summary>
+        </member>
+        <member name="M:SwaggerApplication.Controllers.CarroController.GetById(System.Int32)">
+            <summary>
+            Este método serve para obter um carro passando um ID por parametro.
+            </summary>
+            <param name="id">Este parâmetro é o ID do carro.</param>
+        </member>
+        <member name="M:SwaggerApplication.Controllers.v2.GestaoController.AlugarCarro(SwaggerApplication.Models.v2.Aluguel)">
+            <summary>
+            Serve para que o cliente possa alugar um carro. 
+            </summary>
+            <param name="dadosAluguel"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
